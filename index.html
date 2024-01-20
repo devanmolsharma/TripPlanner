@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="script.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fuggles">
+	<link rel="stylesheet" href="main.css">
+	<title>Manitoba trip planner</title>
+</head>
+
+<body>
+	<header>
+		<h1>Plan my route</h1>
+	</header>
+
+	<main>
+		<form action="index.html" class="mainform">
+			<div>
+				<label for="origin">Origin:</label>
+				<input type="text" id="origin" name="origin" placeholder="Enter origin">
+				<label for="currentBox">Current Location</label>
+				<input type="checkbox" id="currentBox" onclick="toggle('origin')">
+			</div><br>
+
+			<div>
+				<label for="destination">Destination:</label>
+				<input type="text" id="destination" name="destination" placeholder="Enter destination">
+				<label for="destBox">Current Location</label>
+				<input type="checkbox" id="destBox" onclick="toggle('destination')">
+			</div><br>
+
+			<div id="extracontroller">Extra Settings </div>
+			<div id="extraSettings">
+
+				<div>
+					<label for="date">Date:</label>
+					<input type="date" id="date" name="date" value="">
+				</div><br>
+
+				<div>
+					<label for="time">Time:</label>
+					<input type="time" id="time" name="time" value="">
+				</div><br>
+
+				<div>
+					<label for="mode">Mode:</label>
+					<select id="mode" name="mode">
+						<option value="depart-before">Depart Before</option>
+						<option value="depart-after">Depart After</option>
+						<option value="arrive-before">Arrive Before</option>
+						<option value="arrive-after">Arrive After</option>
+					</select>
+				</div><br>
+
+				<div>
+					<label for="walk-speed">Walk Speed (km/h):</label>
+					<input type="number" id="walk-speed" name="walk-speed" step="0.1">
+				</div><br>
+
+				<div>
+					<label for="max-walk-time">Max Walk Time (minutes):</label>
+					<input type="number" id="max-walk-time" name="max-walk-time">
+				</div><br>
+
+				<div>
+					<label for="min-transfer-wait">Min Transfer Wait (minutes):</label>
+					<input type="number" id="min-transfer-wait" name="min-transfer-wait">
+				</div><br>
+
+				<div>
+					<label for="max-transfer-wait">Max Transfer Wait (minutes):</label>
+					<input type="number" id="max-transfer-wait" name="max-transfer-wait">
+				</div><br>
+
+				<div>
+					<label for="max-transfers">Max Transfers:</label>
+					<input type="number" id="max-transfers" name="max-transfers">
+				</div><br>
+
+				<div>
+					<label for="usage">Location Names:</label>
+					<select id="usage" name="usage">
+						<option value="long">Long (Verbose)</option>
+						<option value="short">Short (Terser)</option>
+					</select>
+				</div><br>
+
+				<div>
+					<input type="submit" value="Submit">
+				</div>
+			</div>
+		</form>
+
+		<div class="goBar">
+
+			<b>GO!</b>
+			<div class="tire">
+				<div class="rim">
+
+				</div>
+			</div>
+			<div class="tire">
+				<div class="rim">
+
+				</div>
+			</div>
+		</div>
+		<div class="loadingIndicator">
+			Finding best route!!!!
+		</div>
+
+		<div id="plans"></div>
+
+
+	</main>
+</body>
+
+</html>
